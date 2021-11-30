@@ -112,7 +112,7 @@ bool Set4LibInterfaces::ReadCommands(std::istringstream &iStrm, int socket)
 
       iStrm >> _Com_Name;
     }
-    for (auto thread_object : _THREAD_list) // czekaj na zakończenie wszystkich zadań
+    for (std::thread *thread_object : _THREAD_list) // czekaj na zakończenie wszystkich zadań
     {
       thread_object->join();
       delete thread_object;

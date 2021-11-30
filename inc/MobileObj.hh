@@ -85,7 +85,12 @@ public:
 
                 return result;
         }
-
+        
+        /*!
+         * \brief Zwraca informację o stanie obiektu
+         * 
+         * \return ciag znaków zawierający informacje o obiekcie.
+         */
         std::string returnParameters()
         {
                 char buffer[200];

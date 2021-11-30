@@ -44,7 +44,7 @@ int main()
      return 1;
   }
   else std::cout<<"Połączenie powiodło się"<<std::endl;
-  Sender _Sender(Socket4Sending, LibraryList->getScena());//dorób funkcję do odbierania sceny z setlibinterfaces
+  Sender *_Sender = new Sender(Socket4Sending, LibraryList->getScena());//dorób funkcję do odbierania sceny z setlibinterfaces
   
   //thread Thread4Sending(Fun_CommunicationThread, &_Sender);
   LibraryList->ExecPreprocessor("zbior_polecen.cmd", iStrm);
