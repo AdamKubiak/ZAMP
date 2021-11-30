@@ -40,7 +40,7 @@ obj/Scena.o: src/Scena.cpp inc/Scena.hh
 obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh 
 	g++ -c ${CPPFLAGS} -o obj/xmlinterp.o src/xmlinterp.cpp
 
-obj/klient.o: src/klient.cpp inc/klient.hh 
+obj/klient.o: src/klient.cpp inc/klient.hh  inc/AccessControl.hh
 	g++ -c ${CPPFLAGS} -o obj/klient.o src/klient.cpp
 
 obj/Configuration.o: src/Configuration.cpp inc/Configuration.hh 

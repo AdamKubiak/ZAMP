@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Interp4Set.hh"
-
+#include "unistd.h"
 using std::cout;
 using std::endl;
 
@@ -54,11 +54,17 @@ const char* Interp4Set::GetCmdName() const
 /*!
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  Vector3D new_position = pMobObj->GetPositoin_m();
+  new_position[0] = this->_Cord_X;
+  new_position[1] = this->_Cord_Y;
+  pMobObj->SetPosition_m(new_position);
+
+  pMobObj->SetAng_Roll_deg(this->_Angle_OX);
+  pMobObj->SetAng_Pitch_deg(this->_Angle_OY);
+  pMobObj->SetAng_Yaw_deg(this->_Angle_OZ);
+  usleep(300000);
   return true;
 }
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "MobileObj.hh"
-
+#include "AccessControl.hh"
 /*!
  * \file
  * \brief Definicja klasy Interp4Command
@@ -18,7 +18,7 @@
  */
  class Interp4Command {
   public:
-   /*!
+   /*!bObj, int Socket ) const = 0;
     * \brief Destruktor wirtualny ze wzgledu na klasy pochodne
     *
     *  
@@ -39,7 +39,8 @@
    /*!
     * \brief Wykonuje polecenie oraz wizualizuje jego realizację.
     */
-   virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
+   virtual bool ExecCmd( MobileObj *pMobObj, AccessControl *pAccCtrl) const = 0;
+   //virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
    /*!
     * \brief Czyta wartości parametrów danego polecenia.
     */

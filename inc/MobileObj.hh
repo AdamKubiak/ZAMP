@@ -88,13 +88,12 @@ public:
 
         std::string returnParameters()
         {
-                std::string message = "AddObj ";
                 char buffer[200];
                 int length = sprintf(buffer, "Name=%s RGB=(%d,%d,%d) Scale=(%f,%f,%f) Shift=(%f,%f,%f) RotXYZ_deg=(%f,%f,%f) Trans_m=(%f,%f,%f)\n",
                 this->_Name.c_str(), this->color[0], this->color[1], this->color[2],this->_Scale[0],this->_Scale[1],this->_Scale[2],
                 this->_Shift[0],this->_Shift[1],this->_Shift[2],this->_Ang_Roll_deg,this->_Ang_Pitch_deg,this->_Ang_Yaw_deg,this->_Position_m[0], this->_Position_m[1],this->_Position_m[2]);
                 std::string result(buffer, length);
-                message = message+result;
+                std::string message = result;
                 // Ta instrukcja to tylko uproszczony przykład
                 // cout << objectPointer->movingState;
                 return message; // Tu musi zostać wywołanie odpowiedniej                  // metody/funkcji gerującej polecenia dla serwera
